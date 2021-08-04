@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Gestion hospitaliaire</title>
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet"> -->
+
+  
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+    
+    
+  
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+  
+  <!--   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+  <title>Gestion Hospitaliaire page d'acceuil</title>
+</head>
+<div class="sticky-top">
+<header>
+
+ <div th:replace="fragment::navbar"></div>
+</header>
+</div>
+    <body>
+       <div class="row">
+      <div class="col"> 
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+     <!-- card1 -->
+    <div class="grey-bg container-fluid">
+  <section id="minimal-statistics">
+     <div class="row">
+    
+      <div class="col-xl-12 col-sm-8 col-12">
+        <div class="card bg-dark">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                 <div class="media-body text-left">
+                  </br>
+                  <h3 class="success"><a th:href="@{/medecin}" class="success"> Medecin </a></h3>
+                  <hr width="13%" align="left" color="white">
+                  <h3 class="success"><a th:href="@{/ajout-medecin}" class="success"> Ajouter </a></h3>
+                  </br>
+                </div>
+                <div class="align-self-center">
+                  <i class="icon-user success font-large-2 float-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </section>
+      </div>
+      
+      
+     <!-- card2 -->
+      <div class="grey-bg container-fluid">
+  <section id="minimal-statistics">
+     <div class="row">
+    
+      <div class="col-xl-12 col-sm-8 col-12">
+        <div class="card bg-dark">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                 <div class="media-body text-left">
+                  </br>
+                  <h3 class="danger"> <a th:href="@{/malade}" class="danger"> Malades </a></h3>
+                   <hr width="13%" align="left" color="white">
+                  <h3 class="success"><a th:href="@{/ajoutMalade}" class="success"> Ajouter </a></h3>
+                  </br>
+                </div>
+                <div class="align-self-center">
+                <i class="icon-book-open danger font-large-2 float-right"></i>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </section>
+      </div>
+      
+      
+      <!-- card3 -->
+      <div class="grey-bg container-fluid">
+    <section id="minimal-statistics">
+     <div class="row">
+    
+      <div class="col-xl-12 col-sm-8 col-12">
+        <div class="card bg-dark">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                 <div class="media-body text-left">
+                  </br>
+                  
+                  <h3 class="blue"> <a th:href="@{/chambre}"> Chambres   </a></h3>
+                   <hr width="13%" align="left" color="white">
+                  <h3 class="success"><a th:href="@{/ajout-chambre}" class="success"> Ajouter </a></h3>
+                
+                  </br>
+                </div>
+                <div class="align-self-center">
+                <i class="icon-cup blue font-large-2 float-right"></i>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </section>
+      </div>
+      
+      <!-- card4 -->
+      <div class="grey-bg container-fluid">
+    <section id="minimal-statistics">
+     <div class="row">
+    
+      <div class="col-xl-12 col-sm-8 col-12">
+        <div class="card bg-dark">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                 <div class="media-body text-left">
+                  </br>
+                  <div align="center">
+                  <h3> <a th:href="@{/ajout-lit}" class="warning"> Ajouter Lit   </a></h3>
+                   </div>
+                
+                  </br>
+                </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </section>
+      </div>
+    </body>
+    <div >
+    <footer><div th:replace="fragment::footer"></div></footer></div>
+</html>

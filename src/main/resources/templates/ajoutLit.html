@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Malades</title>
+</head>
+<div class="sticky-top"><header><div th:replace="fragment::navbar"></div></header></div>
+<body>
+<br>
+<br>
+<div class="" align="center">
+   
+    <div class="card" style="width: 40rem;" align="center">
+      <div class="card-header">
+        Remplir ce formulaire
+      </div>
+<form method="get" action="/lit-ajout" class="was-validated">
+<div class="form-row align-items-center">
+ 
+   
+   <div class="col ">
+   <div class="form-group">
+     <label for="idchamb">Numero Chambre</label>
+    <br>
+       <select  class="form-control" name="idchamb" id="idchamb" required >
+       <option value="">Numero... </option>
+            <option th:each="ch : ${listech}"
+        th:value="${ch.getIdChambre()}"
+        th:text="${ch.getIdChambre()}">
+          
+    </option>
+              
+              </select>
+              <br>
+              <span th:if="${listech.isEmpty()}">
+              //Vous devez avoir des chambres a fin d'ajouter des lits</span>
+  </div>
+  </div>
+  
+</div>
+  
+
+  
+  <div class="col-auto my-1">
+      <button type="submit" class="btn btn-dark">Ajouter</button>
+    </div>
+ 
+  
+</form>
+</div>
+</div>
+</body>
+<div class="footer">
+ <footer><div th:replace="fragment::footer"></div></footer>
+ </div>
+ 
+</html>

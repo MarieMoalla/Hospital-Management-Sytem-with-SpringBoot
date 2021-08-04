@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Medecins</title>
+</head>
+<div class="sticky-top" ><header><div th:replace="fragment::navbar"></div></header></div>
+<body>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr class="table-primary text-dark" >
+      <th scope="col">#</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Nom </th>
+      <th scope="col">telephone</th>
+      <th scope="col">Departement </th>
+      
+      <th scope="col ">Modifier </th>
+      
+    </tr>
+  </thead>
+  <tbody>
+   <tr th:each="med:${page_medecins}">
+<td th:text="${med.getId()}"></td>
+<td th:text="${med.getFname()}"></td>
+<td th:text="${med.getLname()}"></td>
+<td th:text="${med.getTele()}"></td>
+<td th:text="${med.getDept()}"></td>
+
+<td> <a th:href="@{/modifier-med(id=${med.getId()})}">Modifier</a> </td>
+
+
+  </tbody>
+</table>
+<nav aria-label="Page navigation example ">
+  
+  <ul class="pagination ">
+    
+    <li class="page-item text-dark " th:each="p:${pages}"><a class="page-link" th:text="${p}" th:href="@{/medecin(page=${p})}"></a></li>
+   
+   
+  </ul>
+  
+</nav>
+<br>
+<br>
+</body>
+<div class="footer">
+ <footer><div th:replace="fragment::footer"></div></footer></div>
+</html>

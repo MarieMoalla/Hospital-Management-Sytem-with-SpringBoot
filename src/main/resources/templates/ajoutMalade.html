@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Malades</title>
+
+
+</head>
+<div class="sticky-top"><header><div th:replace="fragment::navbar"></div></header></div>
+<body>
+
+<div class="" align="center">
+   
+    <div class="card" style="width: 40rem;" align="center" th:object="${listeLit}">
+      <div class="card-header">
+        Remplir ce formulaire
+      </div>
+<form method="get" action="/malade-ajout" name = "myForm" class="was-validated" >
+<div class="form-row align-items-center">
+  <div class="col-5">
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" name="nom" id="nom" required>
+     <div class="valid-feedback">Valide.</div>
+    <div class="invalid-feedback">Il faut enter le nom!</div>
+</div>
+  </div>
+  
+ 
+  <div class="col-4 ">
+   <div class="form-group">
+    <label for="prenom">Prenom</label>
+    <input type="text" class="form-control" name="prenom" id="prenom" required>
+     <div class="valid-feedback">Valide.</div>
+    <div class="invalid-feedback">Il faut entrer le prenom!</div>
+   </div>
+  </div>
+   <div class="col-3 ">
+   <div class="form-group">
+    <label for="prenom">Age</label>
+    <input type="" class="form-control" name="age" id="age" required>
+     <div class="valid-feedback">Valide.</div>
+    <div class="invalid-feedback">Specifiez l'age!</div>
+   </div>
+  </div>
+  
+  </div>
+
+<div class="form-row align-items-center">
+
+  <div class="col">
+  <div class="form-group">
+    <label for="tele">Telephone</label>
+    <input type="tel" class="form-control" name="tele" id="tele" required>
+    <div class="valid-feedback">Valide.</div>
+    <div class="invalid-feedback">Il faut entrer le numero de telephone!</div>
+  </div>
+  </div>
+  
+  
+  <div class="col">
+  <div class="form-group">
+    <label for="idlit">Lit Associe</label>
+    <br>
+       <select  class="form-control" name="idlit" id="idlit" required>
+       <option value=""> Numero Lit </option>
+            <option th:each="lit : ${listeLit}"
+        th:value="${lit.getIdLit()}"
+        th:text="${lit.getIdLit()}">
+          
+    </option>
+              
+              </select>
+              <div class="valid-feedback">Valide.</div>
+    <div class="invalid-feedback">Il faut salectioner un lit!</div>
+  </div>
+  </div>
+  </div>
+  
+   <div class="form-row align-items-center">
+  <div class="col">
+  <div class="form-group">
+    <label for="maladiet">Maladie</label>
+    <input type="text" class="form-control" name="maladie" id="maladie" required >
+    <div class="valid-feedback">Valide.</div>
+    <div class="invalid-feedback">Il faut specifier la maladie!</div>
+  </div>
+  </div>
+  
+ 
+  <div class="col ">
+   <div class="form-group">
+     <label for="idmed">Medecin Responsable</label>
+    <br>
+       <select  class="form-control" name="idmed" id="idmed" required >
+       <option value="">ID Medecin </option>
+            <option th:each="med : ${listeMed}"
+        th:value="${med.getId()}"
+        th:text="${med.getId()}">
+          
+    </option>
+              
+              </select>
+             </div>
+  </div>
+  </div>
+      
+  
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+    
+</form>
+</div>
+</div>
+
+</body>
+<div class="footer">
+ <footer><div th:replace="fragment::footer"></div></footer>
+ </div>
+ 
+</html>

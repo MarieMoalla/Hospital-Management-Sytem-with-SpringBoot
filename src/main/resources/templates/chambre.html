@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Malade</title>
+</head>
+<header><div th:replace="fragment::navbar"></div></header>
+<body  >
+<table class="table table-striped table-dark">
+  <thead>
+    <tr class="table-primary text-dark" >
+      
+      <th scope="col">chambre</th>
+      <th scope="col"></th>
+      <th scope="col">Visit</th>
+       <th scope="col" ><div align="center"><a th:href="@{/ajout-chambre}" class="btn btn-dark" role="button">Ajouter Chambre</a></div></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+ <tr th:each="ch:${page_chambres.content}">
+<td> Chambre Numero</td>
+
+<td th:text="${ch.getIdChambre()}"></td>  
+<td><a th:href="@{/chambre-info(idch=${ch.getIdChambre()})}"  class="text-primary">Acceder</a></td>
+<td class="table-primary text-dark"></td>
+</tr>
+
+
+
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example ">
+  
+  <ul class="pagination ">
+    
+    <li class="page-item text-dark " th:each="p:${pages}"><a class="page-link" th:text="${p}" th:href="@{/chambre(page=${p})}"></a></li>
+   
+   
+  </ul>
+  
+</nav>
+
+
+<br>
+<br>
+</body>
+<div class="footer">
+ <footer ><div th:replace="fragment::footer" ></div></footer></div>
+</html>

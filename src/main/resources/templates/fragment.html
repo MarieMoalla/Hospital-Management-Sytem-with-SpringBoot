@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+<!-- Navigation Bar -->
+<div th:fragment="navbar">
+<header class="sticky-top">
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+ <i style="color:white"class="material-icons " > masks</i> 
+  
+  <h2 style="color:gray" class="info"> <a href="/" class="card-link">Gestion Hospitaliere </a></h2>
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+        
+      <a class="nav-item nav-link " href="/medecin"> Medecins <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/malade">Malades</a>
+      <a class="nav-item nav-link" href="/chambre">Chambres</a>
+      <a class="nav-item nav-link" href="/lit">Lit</a></div>
+      
+  </div>
+</nav>
+
+</header>
+</div>
+<!-- /Navigation Bar -->
+
+
+<!-- Footer -->
+<div th:fragment="footer" class="sticky-bottom ">
+
+<footer class="bg-dark text-center text-lg-start sticky-bottom">
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    <div align="left"> 
+    <a class="text-light" href="/">Acceuil</a></div>
+  </div>
+ 
+</footer>
+
+</div>
+<!-- jquer and js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
